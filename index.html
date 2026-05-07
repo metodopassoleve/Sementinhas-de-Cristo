@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pequenos no Caminho | Pacotes Cristãos Educativos</title>
-  <meta name="description" content="Pacotes cristãos educativos para pais ensinarem valores, fé e boas atitudes aos filhos de forma simples e bonita.">
+  <title>Pequenos no Caminho | Atividades Cristãs para Crianças</title>
+  <meta name="description" content="Pacotes digitais cristãos para pais ensinarem fé, caráter e valores aos filhos com atividades simples, bonitas e fáceis de aplicar em casa.">
   <style>
     :root {
       --bg: #f8f2e7;
@@ -443,6 +443,45 @@
       font-family: 'Trebuchet MS', Verdana, sans-serif;
     }
 
+    .package-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 58px rgba(35,45,40,.15);
+    }
+
+    .package-card, .buy {
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .buy:hover { background: var(--green-2); }
+
+    .conversion-strip {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .strip-item {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,250,241,.78);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 32px rgba(35,45,40,.07);
+    }
+
+    .strip-item strong {
+      display: block;
+      color: var(--green-2);
+      margin-bottom: 6px;
+    }
+
+    .strip-item span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: .92rem;
+    }
+
     .why {
       display: grid;
       grid-template-columns: .85fr 1.15fr;
@@ -468,6 +507,33 @@
     .why-card p {
       color: rgba(255,255,255,.78);
       line-height: 1.65;
+    }
+
+    .why-list {
+      margin: 22px 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 11px;
+    }
+
+    .why-list li {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      color: rgba(255,255,255,.84);
+      line-height: 1.45;
+    }
+
+    .why-list li:before {
+      content: '';
+      width: 9px;
+      height: 9px;
+      flex: 0 0 9px;
+      margin-top: 7px;
+      border-radius: 999px;
+      background: var(--gold-2);
+      box-shadow: 0 0 0 5px rgba(232,199,114,.14);
     }
 
     .benefits {
@@ -496,6 +562,51 @@
       font-size: .94rem;
     }
 
+    .steps {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,250,241,.82);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 42px rgba(35,45,40,.09);
+    }
+
+    .step:before {
+      content: attr(data-step);
+      position: absolute;
+      right: 18px;
+      top: 8px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 5.6rem;
+      line-height: 1;
+      color: rgba(200,148,53,.16);
+      font-weight: 800;
+    }
+
+    .step strong {
+      position: relative;
+      display: block;
+      color: var(--green-2);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      position: relative;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
     .testimonial {
       padding: 30px;
       margin-top: 20px;
@@ -510,12 +621,73 @@
       background: var(--paper-2);
       line-height: 1.65;
       color: #3f4743;
+      position: relative;
+    }
+
+    .quote:before {
+      content: '"';
+      position: absolute;
+      right: 18px;
+      top: 2px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 4rem;
+      color: rgba(200,148,53,.25);
     }
 
     .quote strong {
       display: block;
       color: var(--green-2);
       margin-top: 12px;
+    }
+
+    .offer {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr .78fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .offer-main, .offer-side {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 56px rgba(35,45,40,.11);
+    }
+
+    .offer-main {
+      padding: clamp(24px, 4vw, 38px);
+      background:
+        radial-gradient(circle at 88% 12%, rgba(232,199,114,.28), transparent 13rem),
+        linear-gradient(135deg, rgba(255,250,241,.92), rgba(244,234,216,.86));
+    }
+
+    .offer-main h2 { max-width: 680px; }
+
+    .offer-main p {
+      max-width: 690px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .offer-side {
+      padding: 26px;
+      background: linear-gradient(145deg, var(--green-2), #173b31);
+      color: white;
+    }
+
+    .offer-side strong {
+      display: block;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2.2rem;
+      letter-spacing: -.05em;
+      margin-bottom: 8px;
+    }
+
+    .offer-side span {
+      color: rgba(255,255,255,.76);
+      line-height: 1.55;
+      display: block;
+      margin-bottom: 18px;
     }
 
     .payment {
@@ -540,6 +712,23 @@
     .payment p {
       color: rgba(255,255,255,.78);
       line-height: 1.65;
+    }
+
+    .payment-note {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .payment-note span {
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.78);
+      font-size: .9rem;
+      line-height: 1.35;
     }
 
     .pix-box {
@@ -577,6 +766,32 @@
       font-weight: 900;
     }
 
+    .final-cta {
+      margin-top: 20px;
+      padding: clamp(24px, 4vw, 36px);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(232,199,114,.35), transparent 12rem),
+        linear-gradient(135deg, #fffaf1, #f2e3c7);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+    }
+
+    .final-cta p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 670px;
+    }
+
     .faq {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -610,8 +825,8 @@
     }
 
     @media (max-width: 900px) {
-      .hero, .why, .payment-inner { grid-template-columns: 1fr; }
-      .grid, .faq { grid-template-columns: repeat(2, 1fr); }
+      .hero, .why, .payment-inner, .offer { grid-template-columns: 1fr; }
+      .grid, .faq, .conversion-strip, .steps { grid-template-columns: repeat(2, 1fr); }
       .section-head { display: block; }
       .section-head p { margin-top: 12px; }
     }
@@ -620,8 +835,10 @@
       .wrap { width: min(100% - 24px, 1140px); }
       .nav-actions .navlink { display: none; }
       .hero { padding-top: 48px; }
-      .trust-row, .grid, .benefits, .testimonial, .faq { grid-template-columns: 1fr; }
-      .hero-card, .why-card, .payment, .testimonial { border-radius: 22px; }
+      .trust-row, .grid, .benefits, .testimonial, .faq, .conversion-strip, .steps, .payment-note { grid-template-columns: 1fr; }
+      .hero-card, .why-card, .payment, .testimonial, .offer-main, .offer-side, .final-cta { border-radius: 22px; }
+      .final-cta { display: block; }
+      .final-cta .btn { margin-top: 18px; width: 100%; }
       .mock-book { min-height: 360px; }
       .seal { width: 96px; height: 96px; font-size: .85rem; }
     }
@@ -646,16 +863,16 @@
     <div class="wrap hero">
       <div>
         <span class="eyebrow">Educação cristã dentro de casa</span>
-        <h1>Conteúdos bonitos para ensinar fé, caráter e valores aos filhos.</h1>
-        <p class="lead">Pacotes digitais criados para pais que querem transformar momentos simples em conversas profundas, atividades educativas e memórias com propósito.</p>
+        <h1>Ensine valores cristãos ao seu filho sem precisar improvisar.</h1>
+        <p class="lead">Pacotes digitais prontos para transformar 15 minutos em família em conversas sobre fé, caráter, obediência, gratidão e amor a Deus.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#pacotes">Ver os 12 pacotes</a>
-          <a class="btn btn-soft" href="#beneficios">Como funciona</a>
+          <a class="btn btn-gold" href="#pacotes">Escolher um pacote por R$ 19,90</a>
+          <a class="btn btn-soft" href="#beneficios">Ver como recebe</a>
         </div>
         <div class="trust-row">
-          <div class="trust-item"><strong>Para famílias</strong> Linguagem acolhedora, prática e respeitosa.</div>
-          <div class="trust-item"><strong>Uso imediato</strong> Material digital para aplicar em casa.</div>
-          <div class="trust-item"><strong>Preço único</strong> Todos os pacotes por R$ 19,90.</div>
+          <div class="trust-item"><strong>Para pais cristãos</strong> Linguagem simples, familiar e respeitosa.</div>
+          <div class="trust-item"><strong>Uso no mesmo dia</strong> Receba digitalmente e aplique em casa.</div>
+          <div class="trust-item"><strong>Preço transparente</strong> Todos os pacotes por R$ 19,90.</div>
         </div>
       </div>
 
@@ -663,8 +880,8 @@
         <div class="mock-book">
           <div>
             <small>Coleção educativa cristã</small>
-            <h2>12 pacotes para formar valores com amor.</h2>
-            <p>Atividades, reflexões e ideias para aproximar pais e filhos em conversas que ficam no coração.</p>
+            <h2>12 temas para aproximar seu filho de Deus no dia a dia.</h2>
+            <p>Atividades, reflexões e conversas guiadas para pais que querem educar com presença e propósito.</p>
           </div>
           <div class="seal">R$ 19,90 cada</div>
         </div>
@@ -674,10 +891,17 @@
     <section id="pacotes">
       <div class="wrap">
         <div class="section-head">
-          <h2>Escolha o pacote</h2>
-          <p>Os nomes são provisórios para você trocar depois. Quando enviar as imagens, encaixamos as capas reais sem bagunçar o layout.</p>
+          <h2>Escolha por onde começar</h2>
+          <p>Cada pacote resolve uma dor real da rotina: conversar sobre fé, corrigir atitudes, ensinar gratidão e criar momentos com Deus.</p>
         </div>
         <div class="grid" id="listaPacotes"></div>
+
+        <div class="conversion-strip">
+          <div class="strip-item"><strong>Compra direta</strong><span>Sem cadastro, sem carrinho e sem etapas confusas.</span></div>
+          <div class="strip-item"><strong>Feito para pais</strong><span>Você conduz a atividade mesmo sem experiência pedagógica.</span></div>
+          <div class="strip-item"><strong>Baixo risco</strong><span>Comece com um tema por apenas R$ 19,90.</span></div>
+          <div class="strip-item"><strong>Valor eterno</strong><span>Uma conversa de fé pode ficar na memória da criança.</span></div>
+        </div>
       </div>
     </section>
 
@@ -685,22 +909,48 @@
       <div class="wrap">
         <div class="why">
           <div class="why-card">
-            <span class="eyebrow">Por que converte</span>
-            <h2>Compra simples, promessa clara e visual confiável.</h2>
-            <p>A página foi pensada para anúncio: mostra o valor do material rápido, cria segurança para os pais e leva direto para o pagamento sem carrinho.</p>
-            <a class="btn btn-gold" href="#pacotes">Quero escolher</a>
+            <span class="eyebrow">O que você leva</span>
+            <h2>Um caminho pronto para educar com fé, não só mais um PDF perdido.</h2>
+            <p>A promessa é simples: você escolhe um tema, recebe um material organizado e tem uma forma clara de puxar uma conversa cristã com seu filho.</p>
+            <ul class="why-list">
+              <li>Roteiros simples para não depender de inspiração na hora.</li>
+              <li>Atividades curtas para caber antes de dormir, no domingo ou no devocional.</li>
+              <li>Temas que ajudam a corrigir atitudes sem transformar tudo em bronca.</li>
+              <li>Entrega digital pelo WhatsApp após o envio do comprovante.</li>
+            </ul>
+            <a class="btn btn-gold" href="#pacotes">Escolher meu tema</a>
           </div>
           <div class="benefits">
-            <div class="benefit"><strong>Familiar</strong><span>Tom acolhedor para pais, mães e responsáveis que querem participar da formação dos filhos.</span></div>
-            <div class="benefit"><strong>Profissional</strong><span>Visual limpo, elegante e com cara de produto digital sério, sem parecer improvisado.</span></div>
-            <div class="benefit"><strong>Cristão</strong><span>Mensagem centrada em fé, valores, gratidão, obediência, bondade e propósito.</span></div>
-            <div class="benefit"><strong>Direto para venda</strong><span>Botões claros, preço visível e pagamento Pix na própria página para reduzir atrito.</span></div>
+            <div class="benefit"><strong>Quando falta tempo</strong><span>Você não precisa montar aula, pesquisar atividade ou escrever perguntas do zero.</span></div>
+            <div class="benefit"><strong>Quando falta ideia</strong><span>Cada pacote dá um ponto de partida para conversar sem travar.</span></div>
+            <div class="benefit"><strong>Quando precisa corrigir</strong><span>Obediência, perdão, gratidão e boas atitudes aparecem em linguagem mais leve.</span></div>
+            <div class="benefit"><strong>Quando quer aproximar</strong><span>O foco é criar vínculo, não só entregar tarefa para a criança fazer sozinha.</span></div>
           </div>
         </div>
 
+        <div class="steps">
+          <div class="step" data-step="1"><strong>Escolha uma necessidade</strong><p>Seu filho precisa trabalhar gratidão, obediência, oração, perdão ou identidade? Comece por esse tema.</p></div>
+          <div class="step" data-step="2"><strong>Faça o Pix com clareza</strong><p>O valor aparece antes do pagamento. Nada de taxa escondida, assinatura ou cobrança surpresa.</p></div>
+          <div class="step" data-step="3"><strong>Receba e aplique</strong><p>Envie o comprovante no WhatsApp, receba o material digital e use no ritmo da sua família.</p></div>
+        </div>
+
         <div class="testimonial">
-          <div class="quote">“Eu queria algo simples para conversar sobre Deus com meu filho sem transformar tudo em bronca. Esse tipo de material ajuda muito.”<strong>Mãe de 2 crianças</strong></div>
-          <div class="quote">“Visual bonito, fácil de entender e com atividades que cabem na rotina da família.”<strong>Família cristã</strong></div>
+          <div class="quote">Para o pai que pensa: “eu quero ensinar sobre Deus, mas não sei como começar sem parecer uma cobrança”.<strong>Este material entrega um começo pronto.</strong></div>
+          <div class="quote">Para a mãe que quer algo bonito, simples e com propósito para usar em casa, sem precisar preparar tudo sozinha.<strong>Este material economiza tempo e dá direção.</strong></div>
+        </div>
+
+        <div class="offer">
+          <div class="offer-main">
+            <span class="eyebrow">Comece pequeno</span>
+            <h2>Escolha um tema hoje e transforme uma conversa comum em um momento de fé.</h2>
+            <p>Você não precisa comprar todos agora. Comece com o assunto que sua família mais precisa nesta semana e veja como fica mais fácil ensinar com calma, presença e propósito.</p>
+            <a class="btn btn-primary" href="#pacotes">Escolher meu primeiro tema</a>
+          </div>
+          <div class="offer-side">
+            <strong>R$ 19,90</strong>
+            <span>Preço único por pacote. Compra simples para quem quer começar hoje sem compromisso grande.</span>
+            <a class="btn btn-gold" href="#pacotes">Ver temas</a>
+          </div>
         </div>
       </div>
     </section>
@@ -711,9 +961,14 @@
           <div class="payment-inner">
             <div>
               <span class="eyebrow">Pagamento Pix</span>
-              <h2>Finalize seu pedido</h2>
+              <h2>Finalize com Pix</h2>
               <p id="paymentText">Escolha um pacote acima para aparecer o nome do material aqui.</p>
               <a class="btn btn-gold" id="whatsLink" href="https://api.whatsapp.com/send?phone=5517992062959" target="_blank" rel="noopener">Enviar comprovante no WhatsApp</a>
+              <div class="payment-note">
+                <span>Atendimento pelo WhatsApp</span>
+                <span>R$ 19,90 sem taxa escondida</span>
+                <span>Material digital após confirmação</span>
+              </div>
             </div>
 
             <div class="pix-box">
@@ -732,13 +987,24 @@
     <section id="duvidas">
       <div class="wrap">
         <div class="section-head">
-          <h2>Dúvidas rápidas</h2>
-          <p>Textos de confiança para reduzir objeção antes da compra.</p>
+          <h2>Antes de comprar</h2>
+          <p>Respostas curtas para você decidir com segurança.</p>
         </div>
         <div class="faq">
-          <div class="faq-item"><strong>Como recebo?</strong><p>Após o Pix, envie o comprovante no WhatsApp. Você recebe o material digital por atendimento.</p></div>
-          <div class="faq-item"><strong>Serve para qual idade?</strong><p>Os pacotes podem ser adaptados por pais para crianças em diferentes fases. Depois ajustamos por faixa etária se quiser.</p></div>
-          <div class="faq-item"><strong>Posso comprar mais de um?</strong><p>Sim. Cada pacote custa R$ 19,90. Se quiser, depois criamos combo promocional.</p></div>
+          <div class="faq-item"><strong>Como recebo?</strong><p>Após o Pix, envie o comprovante no WhatsApp. O material digital é enviado pelo atendimento.</p></div>
+          <div class="faq-item"><strong>Preciso imprimir?</strong><p>Não necessariamente. Você pode usar no celular, tablet ou imprimir as páginas que quiser.</p></div>
+          <div class="faq-item"><strong>Serve para qual idade?</strong><p>Foi pensado para crianças, com conversa adaptável. Os pais ajustam a profundidade conforme a idade.</p></div>
+          <div class="faq-item"><strong>Posso comprar mais de um?</strong><p>Sim. Cada pacote custa R$ 19,90. Você pode começar com um tema e depois escolher outros.</p></div>
+          <div class="faq-item"><strong>É material cristão?</strong><p>Sim. A proposta é cristã, familiar e educativa, com foco em fé, valores e formação de caráter.</p></div>
+          <div class="faq-item"><strong>E se eu tiver dúvida?</strong><p>Você fala pelo WhatsApp no mesmo canal em que envia o comprovante.</p></div>
+        </div>
+
+        <div class="final-cta">
+          <div>
+            <h2>Seu filho não precisa de uma aula perfeita. Precisa de um pai presente.</h2>
+            <p>Escolha o primeiro tema e comece com uma conversa simples, bonita e cheia de propósito.</p>
+          </div>
+          <a class="btn btn-primary" href="#pacotes">Escolher por R$ 19,90</a>
         </div>
       </div>
     </section>
@@ -754,18 +1020,18 @@
     const whatsapp = '5517992062959';
 
     const pacotes = [
-      ['Pacote 01', 'Devocional em Família', 'Atividades e conversas simples para criar momentos de fé entre pais e filhos.', '#184d3b'],
-      ['Pacote 02', 'Obediência com Amor', 'Histórias, perguntas e exercícios para ensinar limites sem perder o acolhimento.', '#7b5d2b'],
-      ['Pacote 03', 'Gratidão Todo Dia', 'Ideias práticas para cultivar um coração grato dentro da rotina da casa.', '#8d6732'],
-      ['Pacote 04', 'Oração para Crianças', 'Um guia delicado para ensinar a criança a conversar com Deus com naturalidade.', '#345f56'],
-      ['Pacote 05', 'Boas Atitudes', 'Atividades sobre respeito, bondade, honestidade e cuidado com o próximo.', '#8f533d'],
-      ['Pacote 06', 'Histórias Bíblicas', 'Recursos educativos para transformar histórias da Bíblia em aprendizado para a vida.', '#4f6b45'],
-      ['Pacote 07', 'Coragem e Fé', 'Conteúdos para trabalhar medo, confiança e esperança com linguagem infantil.', '#52667e'],
-      ['Pacote 08', 'Rotina com Propósito', 'Quadros e combinados para organizar a rotina com responsabilidade e valores.', '#695241'],
-      ['Pacote 09', 'Perdão e Reconciliação', 'Atividades para ensinar arrependimento, perdão e restauração de vínculos.', '#7a5969'],
-      ['Pacote 10', 'Generosidade', 'Ideias para ensinar serviço, partilha e cuidado com quem está por perto.', '#3f7059'],
-      ['Pacote 11', 'Identidade em Deus', 'Reflexões para fortalecer autoestima, pertencimento e valor pessoal na infância.', '#4d5b7a'],
-      ['Pacote 12', 'Família no Caminho', 'Um pacote especial para conectar pais e filhos em conversas semanais de fé.', '#8a7138']
+      ['Tema 01', 'Devocional de 7 Dias', 'Um roteiro simples para criar o hábito de falar sobre Deus em família, mesmo com poucos minutos por dia.', '#184d3b'],
+      ['Tema 02', 'Obediência com Amor', 'Para ensinar limites, respeito e escuta sem transformar a correção em briga ou sermão pesado.', '#7b5d2b'],
+      ['Tema 03', 'Gratidão que Vira Hábito', 'Atividades para ajudar a criança a reconhecer bênçãos, agradecer e valorizar o que já tem.', '#8d6732'],
+      ['Tema 04', 'Aprendendo a Orar', 'Um caminho delicado para ensinar a criança a conversar com Deus com palavras simples e sinceras.', '#345f56'],
+      ['Tema 05', 'Boas Atitudes em Casa', 'Exercícios e conversas sobre respeito, honestidade, bondade e pequenas escolhas do dia a dia.', '#8f533d'],
+      ['Tema 06', 'Histórias Bíblicas com Atividades', 'Histórias, perguntas e propostas práticas para transformar a Bíblia em aprendizado para a vida.', '#4f6b45'],
+      ['Tema 07', 'Coragem Quando Estou com Medo', 'Para trabalhar medo, insegurança e confiança em Deus com linguagem acolhedora para crianças.', '#52667e'],
+      ['Tema 08', 'Rotina com Propósito', 'Quadros, combinados e reflexões para organizar a rotina com responsabilidade, calma e fé.', '#695241'],
+      ['Tema 09', 'Perdão e Recomeço', 'Ajude a criança a entender arrependimento, perdão e reconciliação de um jeito leve e prático.', '#7a5969'],
+      ['Tema 10', 'Generosidade na Prática', 'Ideias para ensinar serviço, partilha e cuidado com o próximo dentro e fora de casa.', '#3f7059'],
+      ['Tema 11', 'Quem Deus Diz que Eu Sou', 'Reflexões para fortalecer identidade, autoestima e pertencimento com base no amor de Deus.', '#4d5b7a'],
+      ['Tema 12', 'Família no Caminho', 'Um pacote especial para pais que querem criar conversas semanais de fé, vínculo e propósito.', '#8a7138']
     ];
 
     const lista = document.getElementById('listaPacotes');
@@ -778,8 +1044,8 @@
 
     function escolherPacote(nome) {
       produtoEscolhido.textContent = nome;
-      paymentText.textContent = `Você escolheu: ${nome}. O valor é ${preco}. Copie a chave Pix abaixo e envie o comprovante para receber seu material.`;
-      const msg = `Olá, fiz o Pix de ${preco} referente ao pacote cristão educativo: ${nome}. Vou enviar o comprovante.`;
+      paymentText.textContent = `Você escolheu: ${nome}. O valor é ${preco}. Copie a chave Pix abaixo e envie o comprovante no WhatsApp para receber seu material digital.`;
+      const msg = `Olá, fiz o Pix de ${preco} referente ao pacote cristão educativo: ${nome}. Vou enviar o comprovante para receber o material.`;
       whatsLink.href = `https://api.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(msg)}`;
       paymentBox.classList.add('is-visible');
       copyStatus.textContent = '';
