@@ -1,0 +1,569 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infos Neuro | Materiais Digitais</title>
+  <meta name="description" content="Escolha seu info, pague via Pix e envie o comprovante para receber o material.">
+  <style>
+    :root {
+      --bg: #f7f4ed;
+      --paper: #fffaf0;
+      --ink: #18211f;
+      --muted: #607069;
+      --green: #176b4d;
+      --green-2: #0f4c3a;
+      --gold: #d99a27;
+      --line: rgba(24, 33, 31, .13);
+      --shadow: 0 22px 70px rgba(34, 50, 44, .14);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(217, 154, 39, .22), transparent 34rem),
+        radial-gradient(circle at 80% 10%, rgba(23, 107, 77, .18), transparent 28rem),
+        linear-gradient(180deg, #fbf8ef 0%, var(--bg) 45%, #efe8da 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 22px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 244, 237, .72);
+      border-bottom: 1px solid rgba(24, 33, 31, .08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.25rem;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--green), var(--gold));
+      box-shadow: 0 10px 24px rgba(23, 107, 77, .24);
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+    }
+
+    .navlink {
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      font-size: .9rem;
+      color: var(--green-2);
+      border: 1px solid var(--line);
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255, 250, 240, .62);
+    }
+
+    .hero {
+      padding: 72px 0 38px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .76rem;
+      font-weight: 900;
+      color: var(--green-2);
+      background: rgba(23, 107, 77, .1);
+      border: 1px solid rgba(23, 107, 77, .17);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    h1 {
+      margin: 20px 0 16px;
+      max-width: 780px;
+      font-size: clamp(2.35rem, 6vw, 5.2rem);
+      line-height: .92;
+      letter-spacing: -.07em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 650px;
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      font-family: Arial, sans-serif;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      box-shadow: 0 15px 30px rgba(23, 107, 77, .24);
+    }
+
+    .btn-soft {
+      background: rgba(255, 250, 240, .72);
+      color: var(--green-2);
+      border: 1px solid var(--line);
+    }
+
+    .price-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card:before {
+      content: '';
+      position: absolute;
+      inset: -80px -80px auto auto;
+      width: 190px;
+      height: 190px;
+      border-radius: 999px;
+      background: rgba(217, 154, 39, .22);
+    }
+
+    .price-card small {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .price {
+      margin: 12px 0 10px;
+      font-size: clamp(3.2rem, 8vw, 5.8rem);
+      line-height: .9;
+      letter-spacing: -.08em;
+      color: var(--green-2);
+    }
+
+    .price span {
+      font-size: .34em;
+      letter-spacing: -.03em;
+    }
+
+    .note {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    section { padding: 42px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -.06em;
+      line-height: .98;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 420px;
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px;
+      background: rgba(255, 250, 240, .82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 14px 40px rgba(34, 50, 44, .09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-card:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 10%, var(--tone), transparent 13rem);
+      opacity: .42;
+      pointer-events: none;
+    }
+
+    .info-card > * { position: relative; }
+
+    .tag {
+      width: 68px;
+      height: 68px;
+      border-radius: 21px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--green), var(--tone));
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      box-shadow: 0 16px 32px rgba(23, 107, 77, .18);
+    }
+
+    .info-card h3 {
+      margin: 18px 0 10px;
+      font-size: 1.45rem;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .info-card p {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: .97rem;
+    }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 16px;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+    }
+
+    .mini-price { color: var(--green-2); }
+
+    .buy {
+      border: 0;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      padding: 12px 15px;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .payment {
+      display: none;
+      margin-top: 12px;
+      background: linear-gradient(135deg, var(--green-2), #12352c);
+      color: white;
+      border-radius: 30px;
+      padding: clamp(24px, 5vw, 46px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .payment.is-visible { display: grid; }
+
+    .payment:before {
+      content: '';
+      position: absolute;
+      right: -110px;
+      top: -120px;
+      width: 310px;
+      height: 310px;
+      border-radius: 999px;
+      background: rgba(217, 154, 39, .24);
+    }
+
+    .payment-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr .86fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .payment h2 { color: white; }
+
+    .payment p {
+      font-family: Arial, sans-serif;
+      color: rgba(255,255,255,.78);
+      line-height: 1.65;
+    }
+
+    .pix-box {
+      background: rgba(255, 250, 240, .96);
+      color: var(--ink);
+      border-radius: 24px;
+      padding: 22px;
+      font-family: Arial, sans-serif;
+    }
+
+    .pix-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(24, 33, 31, .1);
+    }
+
+    .pix-line strong { color: var(--green-2); }
+
+    .pix-key {
+      margin: 16px 0;
+      padding: 16px;
+      border-radius: 16px;
+      background: #f1eadb;
+      word-break: break-all;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .copy-status {
+      min-height: 22px;
+      margin: 10px 0 0;
+      color: var(--green-2);
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 32px 0 46px;
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .payment-inner { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head { display: block; }
+      .section-head p { margin-top: 12px; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 24px, 1120px); }
+      .topbar { padding: 14px 0; }
+      .navlink { display: none; }
+      .hero { padding-top: 44px; }
+      .grid { grid-template-columns: 1fr; }
+      .price-card, .info-card, .payment { border-radius: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Infos Neuro">
+        <span class="mark">N</span>
+        <span>Infos Neuro</span>
+      </a>
+      <a class="navlink" href="#infos">Ver materiais</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <span class="eyebrow">Materiais digitais por Pix</span>
+        <h1>Escolha seu info e receba o material no atendimento.</h1>
+        <p class="lead">Todos os conteúdos estão com preço único. Clique no material que você quer, copie a chave Pix e envie o comprovante pelo WhatsApp.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#infos">Escolher meu info</a>
+          <a class="btn btn-soft" href="#pagamento">Já vou pagar</a>
+        </div>
+      </div>
+
+      <aside class="price-card" aria-label="Preço único">
+        <small>Preço único</small>
+        <div class="price"><span>R$</span>19,90</div>
+        <p class="note">Pagamento simples via Pix. Depois é só mandar o comprovante e o nome do info escolhido.</p>
+      </aside>
+    </div>
+
+    <section id="infos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Infos disponíveis</h2>
+          <p>Layout direto para anúncio: sem carrinho, sem complicação, só escolha e pagamento.</p>
+        </div>
+
+        <div class="grid" id="listaInfos"></div>
+      </div>
+    </section>
+
+    <section id="pagamento">
+      <div class="wrap">
+        <div class="payment" id="paymentBox">
+          <div class="payment-inner">
+            <div>
+              <span class="eyebrow">Pagamento Pix</span>
+              <h2>Finalize seu pedido</h2>
+              <p id="paymentText">Selecione um info acima para aparecer o nome do material aqui.</p>
+              <a class="btn btn-soft" id="whatsLink" href="https://api.whatsapp.com/send?phone=5517992062959" target="_blank" rel="noopener">Enviar comprovante no WhatsApp</a>
+            </div>
+
+            <div class="pix-box">
+              <div class="pix-line"><span>Produto</span><strong id="produtoEscolhido">Aguardando escolha</strong></div>
+              <div class="pix-line"><span>Valor</span><strong>R$ 19,90</strong></div>
+              <div class="pix-line"><span>Tipo</span><strong>Chave Pix</strong></div>
+              <div class="pix-key" id="pixKey">17992062959</div>
+              <button class="btn btn-primary" type="button" id="copyPix">Copiar chave Pix</button>
+              <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Infos Neuro - pagamento via Pix - valor fixo R$ 19,90</div>
+  </footer>
+
+  <script>
+    const preco = 'R$ 19,90';
+    const pix = '17992062959';
+    const whatsapp = '5517992062959';
+
+    const infos = [
+      ['A', 'Atividades de Atenção', 'Exercícios simples para estimular foco, concentração e rotina de treino cognitivo.', '#d99a27'],
+      ['M', 'Memória na Prática', 'Material com ideias para trabalhar memória, associação e organização mental.', '#4e8f78'],
+      ['L', 'Linguagem e Comunicação', 'Propostas para estimular fala, nomeação, compreensão e interação.', '#c76f43'],
+      ['R', 'Rotina Visual', 'Estruturas visuais para organizar o dia e facilitar previsibilidade.', '#7c8f4e'],
+      ['E', 'Emoções e Regulação', 'Conteúdo para identificação emocional e estratégias de autorregulação.', '#b85c72'],
+      ['C', 'Coordenação e Motricidade', 'Atividades práticas para coordenação, planejamento motor e percepção.', '#438a8f'],
+      ['S', 'Sono e Hábitos', 'Orientações organizadas para melhorar rotina, sono e consistência familiar.', '#9b7742'],
+      ['F', 'Funções Executivas', 'Tarefas para planejamento, flexibilidade, controle inibitório e organização.', '#5f7d9c'],
+      ['P', 'Percepção Sensorial', 'Ideias para observar respostas sensoriais e montar atividades adequadas.', '#8b6aa8'],
+      ['B', 'Brincadeiras Terapêuticas', 'Sugestões de brincadeiras com objetivo, vínculo e desenvolvimento.', '#d18b54'],
+      ['T', 'Treino de Autonomia', 'Passos práticos para higiene, alimentação, organização e independência.', '#558f61'],
+      ['G', 'Guia para Famílias', 'Resumo direto para orientar família, rotina e acompanhamento em casa.', '#b9962f']
+    ];
+
+    const lista = document.getElementById('listaInfos');
+    const paymentBox = document.getElementById('paymentBox');
+    const paymentText = document.getElementById('paymentText');
+    const produtoEscolhido = document.getElementById('produtoEscolhido');
+    const whatsLink = document.getElementById('whatsLink');
+    const copyPix = document.getElementById('copyPix');
+    const copyStatus = document.getElementById('copyStatus');
+
+    function escolherInfo(nome) {
+      produtoEscolhido.textContent = nome;
+      paymentText.textContent = `Você escolheu: ${nome}. O valor é ${preco}. Copie a chave Pix abaixo e envie o comprovante pelo WhatsApp.`;
+      const msg = `Olá, fiz o Pix de ${preco} referente ao info: ${nome}. Vou enviar o comprovante.`;
+      whatsLink.href = `https://api.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(msg)}`;
+      paymentBox.classList.add('is-visible');
+      copyStatus.textContent = '';
+      document.getElementById('pagamento').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    infos.forEach(([sigla, nome, desc, cor]) => {
+      const card = document.createElement('article');
+      card.className = 'info-card';
+      card.style.setProperty('--tone', cor);
+      card.innerHTML = `
+        <div>
+          <div class="tag">${sigla}</div>
+          <h3>${nome}</h3>
+          <p>${desc}</p>
+        </div>
+        <div class="card-bottom">
+          <span class="mini-price">${preco}</span>
+          <button class="buy" type="button">Comprar</button>
+        </div>
+      `;
+      card.querySelector('button').addEventListener('click', () => escolherInfo(nome));
+      lista.appendChild(card);
+    });
+
+    copyPix.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pix);
+        copyStatus.textContent = 'Chave Pix copiada.';
+      } catch (error) {
+        copyStatus.textContent = `Chave Pix: ${pix}`;
+      }
+    });
+  </script>
+</body>
+</html>
