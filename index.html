@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -80,6 +80,29 @@
     .mock-book h2 { position: relative; margin: 0; max-width: 330px; font-size: clamp(2.1rem, 4vw, 3.4rem); line-height: .95; letter-spacing: -.06em; color: white; }
     .mock-book p { position: relative; max-width: 310px; color: rgba(255,255,255,.78); line-height: 1.55; margin: 14px 0 0; }
     .seal { position: absolute; right: 28px; bottom: 28px; width: 118px; height: 118px; border-radius: 999px; display: grid; place-items: center; text-align: center; padding: 15px; background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #2d210c; font-weight: 900; line-height: 1.1; box-shadow: 0 16px 32px rgba(0,0,0,.18); transform: rotate(-7deg); }
+    .hero-showcase { position: relative; min-height: 470px; border-radius: var(--radius); overflow: hidden; background: linear-gradient(145deg, #fffaf1, #efe0c4); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .hero-showcase:before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 18% 12%, rgba(232,199,114,.35), transparent 16rem), radial-gradient(circle at 82% 8%, rgba(24,77,59,.18), transparent 18rem); }
+    .showcase-card { position: absolute; width: 46%; border-radius: 22px; overflow: hidden; box-shadow: 0 22px 50px rgba(15, 38, 32, .22); border: 5px solid rgba(255,250,241,.92); background: var(--paper); }
+    .showcase-card img { width: 100%; display: block; }
+    .showcase-card.one { left: 7%; top: 11%; transform: rotate(-5deg); }
+    .showcase-card.two { right: 7%; top: 17%; transform: rotate(4deg); }
+    .showcase-card.three { left: 28%; bottom: 7%; transform: rotate(1deg); }
+    .showcase-badge { position: absolute; left: 24px; bottom: 24px; z-index: 3; max-width: 240px; padding: 16px; border-radius: 20px; background: rgba(15,56,45,.9); color: white; box-shadow: 0 18px 36px rgba(15,56,45,.25); }
+    .showcase-badge strong { display: block; font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; line-height: 1; letter-spacing: -.04em; margin-bottom: 6px; }
+    .showcase-badge span { display: block; color: rgba(255,255,255,.78); font-size: .92rem; line-height: 1.4; }
+    .calm-proof { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 730px; }
+    .calm-proof span { padding: 12px 14px; border-radius: 999px; background: rgba(255,250,241,.74); border: 1px solid var(--line); color: #52605b; font-size: .92rem; font-weight: 800; }
+    .audience { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .audience-card { padding: clamp(22px, 4vw, 34px); border-radius: var(--radius); border: 1px solid var(--line); box-shadow: 0 14px 42px rgba(35,45,40,.09); }
+    .audience-card.light { background: rgba(255,250,241,.86); }
+    .audience-card.deep { background: linear-gradient(145deg, var(--green-2), #173c32); color: white; }
+    .audience-card.deep h2, .audience-card.deep strong { color: white; }
+    .audience-card p { color: var(--muted); line-height: 1.65; }
+    .audience-card.deep p { color: rgba(255,255,255,.78); }
+    .audience-list { margin: 20px 0 0; padding: 0; display: grid; gap: 12px; list-style: none; }
+    .audience-list li { display: flex; gap: 10px; align-items: start; color: #52605b; line-height: 1.45; }
+    .audience-card.deep .audience-list li { color: rgba(255,255,255,.82); }
+    .audience-list li:before { content: ''; width: 9px; height: 9px; flex: 0 0 9px; margin-top: 7px; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 5px rgba(200,148,53,.13); }
     section { padding: 48px 0; }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 24px; }
     .section-head p { margin: 0; max-width: 460px; color: var(--muted); line-height: 1.6; }
@@ -108,6 +131,15 @@
     .price { color: var(--green-2); font-weight: 900; font-size: 1.15rem; }
     .buy { border: 0; cursor: pointer; border-radius: 999px; padding: 12px 15px; color: white; background: var(--ink); font-weight: 900; font-family: 'Trebuchet MS', Verdana, sans-serif; transition: background .18s ease; }
     .buy:hover { background: var(--green-2); }
+    .choice-guide { margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .choice-card { position: relative; overflow: hidden; padding: 22px; border-radius: 24px; background: rgba(255,250,241,.84); border: 1px solid var(--line); box-shadow: 0 14px 42px rgba(35,45,40,.08); }
+    .choice-card:before { content: ''; position: absolute; inset: -70px -70px auto auto; width: 150px; height: 150px; border-radius: 999px; background: rgba(200,148,53,.16); }
+    .choice-card strong { position: relative; display: block; color: var(--green-2); font-size: 1.06rem; margin-bottom: 8px; }
+    .choice-card p { position: relative; margin: 0; color: var(--muted); line-height: 1.55; font-size: .95rem; }
+    .summary-box { margin-top: 16px; padding: 18px; border-radius: 18px; background: #efe4cf; border: 1px solid rgba(31,42,40,.1); }
+    .summary-box strong { display: block; color: var(--green-2); margin-bottom: 6px; }
+    .summary-box span { display: block; color: #5f6a65; line-height: 1.45; font-size: .94rem; }
+    .privacy-note { margin: -2px 0 4px; color: #66736d; font-size: .84rem; line-height: 1.4; }
     .conversion-strip, .benefits, .steps, .faq { display: grid; gap: 16px; }
     .conversion-strip { margin-top: 22px; grid-template-columns: repeat(4, 1fr); }
     .strip-item, .benefit, .step, .faq-item, .testimonial, .offer-main, .offer-side, .payment { border-radius: 24px; border: 1px solid var(--line); box-shadow: 0 14px 42px rgba(35,45,40,.09); }
@@ -144,6 +176,8 @@
     .delivery-form label { display: grid; gap: 6px; color: var(--green-2); font-size: .88rem; font-weight: 900; }
     .delivery-form input { width: 100%; border: 1px solid rgba(31,42,40,.16); border-radius: 14px; background: #fffaf1; color: var(--ink); font: inherit; padding: 13px 14px; outline: none; }
     .delivery-form input:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(200,148,53,.16); }
+    .form-helper { margin: 0; color: #66736d; font-size: .88rem; line-height: 1.45; }
+    .confirm-order { width: 100%; margin-top: 4px; }
     .form-status { min-height: 22px; margin: 10px 0 0; color: #9b3b2f; font-weight: 900; line-height: 1.35; }
     .pix-line { display: flex; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(31,42,40,.1); }
     .pix-line strong { color: var(--green-2); text-align: right; }
@@ -155,8 +189,8 @@
     .final-cta p { margin: 10px 0 0; color: var(--muted); line-height: 1.55; max-width: 670px; }
     footer { padding: 32px 0 46px; text-align: center; color: var(--muted); font-size: .95rem; }
     @media (max-width: 900px) {
-      .hero, .why, .payment-inner, .offer { grid-template-columns: 1fr; }
-      .grid, .faq, .conversion-strip, .steps { grid-template-columns: repeat(2, 1fr); }
+      .hero, .why, .payment-inner, .offer, .audience { grid-template-columns: 1fr; }
+      .grid, .faq, .conversion-strip, .steps, .calm-proof, .choice-guide { grid-template-columns: repeat(2, 1fr); }
       .section-head { display: block; }
       .section-head p { margin-top: 12px; }
     }
@@ -164,8 +198,14 @@
       .wrap { width: min(100% - 24px, 1140px); }
       .nav-actions .navlink { display: none; }
       .hero { padding-top: 48px; }
-      .trust-row, .grid, .benefits, .testimonial, .faq, .conversion-strip, .steps, .payment-note { grid-template-columns: 1fr; }
-      .hero-card, .why-card, .payment, .testimonial, .offer-main, .offer-side, .final-cta { border-radius: 22px; }
+      .trust-row, .grid, .benefits, .testimonial, .faq, .conversion-strip, .steps, .payment-note, .calm-proof, .choice-guide { grid-template-columns: 1fr; }
+      .hero-card, .why-card, .payment, .testimonial, .offer-main, .offer-side, .final-cta, .hero-showcase, .audience-card { border-radius: 22px; }
+      .hero-showcase { min-height: 420px; }
+      .showcase-card { width: 54%; }
+      .showcase-card.one { left: 3%; top: 8%; }
+      .showcase-card.two { right: 3%; top: 16%; }
+      .showcase-card.three { left: 22%; bottom: 8%; }
+      .showcase-badge { left: 14px; right: 14px; bottom: 14px; max-width: none; }
       .final-cta { display: block; }
       .final-cta .btn { margin-top: 18px; width: 100%; }
       .mock-book { min-height: 360px; }
@@ -185,22 +225,27 @@
   <main id="top">
     <div class="wrap hero">
       <div>
-        <span class="eyebrow">Atividades biblicas para criancas</span>
-        <h1>Ensine seu filho sobre Jesus com materiais que ele vai querer usar.</h1>
-        <p class="lead">Pacotes digitais cristaos com historias, desenhos para colorir, devocionais, desafios e valores para transformar fe em rotina dentro de casa.</p>
-        <div class="hero-actions"><a class="btn btn-gold" href="#pacotes">Ver os pacotes</a><a class="btn btn-soft" href="#beneficios">Entender como funciona</a></div>
-        <div class="trust-row">
-          <div class="trust-item"><strong>100% cristao</strong> Conteudo pensado para fe, valores e familia.</div>
-          <div class="trust-item"><strong>Pronto para usar</strong> Receba digitalmente e aplique em casa.</div>
-          <div class="trust-item"><strong>Visual infantil</strong> Colorido, educativo e facil de apresentar para a crianca.</div>
+        <span class="eyebrow">Colecao biblica infantil para casa</span>
+        <h1>Um jeito bonito de ensinar Jesus sem transformar tudo em bronca.</h1>
+        <p class="lead">Atividades digitais para familias cristas que querem colocar Biblia, oracao e valores na rotina dos filhos com calma, carinho e materiais que a crianca tem vontade de abrir.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#pacotes">Escolher o primeiro pacote</a><a class="btn btn-soft" href="#beneficios">Ver se serve para minha familia</a></div>
+        <div class="calm-proof">
+          <span>Para criancas de aproximadamente 3 a 12 anos</span>
+          <span>Para usar em casa, igreja ou escola biblica</span>
+          <span>Pagamento simples e envio manual por e-mail</span>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Destaque dos pacotes"><div class="mock-book"><div><small>Colecao biblica infantil</small><h2>Historias, atividades e valores cristaos em um so lugar.</h2><p>Para pais que querem tirar a fe do discurso e levar Jesus para momentos simples da rotina.</p></div><div class="seal">R$ 19,90 cada</div></div></aside>
+      <aside class="hero-showcase" aria-label="Capas dos pacotes cristaos">
+        <div class="showcase-card one"><img src="assets/pacotes/pacote-01-historias-jesus-colorir.jpg" alt="1.000 Historias de Jesus para Colorir"></div>
+        <div class="showcase-card two"><img src="assets/pacotes/pacote-02-biblia-para-dormir.jpg" alt="Historias da Biblia para Dormir"></div>
+        <div class="showcase-card three"><img src="assets/pacotes/pacote-10-valores-cristaos.jpg" alt="Boas Maneiras com Valores Cristaos"></div>
+        <div class="showcase-badge"><strong>12 pacotes cristãos</strong><span>Colorir, historias, oracao, versiculos, valores e escola biblica em casa.</span></div>
+      </aside>
     </div>
-    <section id="pacotes"><div class="wrap"><div class="section-head"><h2>Escolha o pacote ideal</h2><p>Tem material para colorir, dormir, memorizar versiculos, orar, aprender boas maneiras e transformar sua casa em uma escola biblica familiar.</p></div><div class="grid" id="listaPacotes"></div><div class="conversion-strip"><div class="strip-item"><strong>Compra direta</strong><span>Escolha o pacote, pague no Pix e envie o comprovante.</span></div><div class="strip-item"><strong>Para casa e igreja</strong><span>Use em familia, celula infantil ou escola biblica.</span></div><div class="strip-item"><strong>Crianca engajada</strong><span>Imagens fortes, temas claros e atividades visuais.</span></div><div class="strip-item"><strong>Fe aplicada</strong><span>Nao e so passatempo: cada pacote ensina valores.</span></div></div></div></section>
-    <section id="beneficios"><div class="wrap"><div class="why"><div class="why-card"><span class="eyebrow">Por que funciona</span><h2>A crianca aprende melhor quando fe vira experiencia.</h2><p>Em vez de apenas falar "precisa obedecer" ou "precisa orar", voce entrega uma atividade concreta: pintar, ler, responder, memorizar, conversar e praticar.</p><ul class="why-list"><li>Capas e paginas com visual infantil que chamam atencao.</li><li>Temas biblicos claros para pais ensinarem sem complicar.</li><li>Atividades que unem aprendizado, vinculo e espiritualidade.</li><li>Entrega digital pelo WhatsApp apos o comprovante.</li></ul><a class="btn btn-gold" href="#pacotes">Escolher meu pacote</a></div><div class="benefits"><div class="benefit"><strong>Para ensinar sem travar</strong><span>O tema ja vem pronto. Voce so escolhe, abre e conduz a crianca.</span></div><div class="benefit"><strong>Para reduzir tela vazia</strong><span>Troque alguns minutos de distracao por pintura, leitura e conversa com proposito.</span></div><div class="benefit"><strong>Para corrigir com leveza</strong><span>Valores como obediencia, perdao e bondade entram por historias e exemplos.</span></div><div class="benefit"><strong>Para criar rotina de fe</strong><span>Devocional, oracao e Biblia deixam de ser evento raro e viram pratica simples.</span></div></div></div><div class="steps"><div class="step"><strong>Escolha o pacote</strong><p>Colorir, dormir, orar, memorizar, aprender valores ou estudar a Biblia em casa.</p></div><div class="step"><strong>Finalize no Pix</strong><p>Pagamento simples, com valor claro na tela e mensagem pronta para o WhatsApp.</p></div><div class="step"><strong>Use com a crianca</strong><p>Receba o material digital e aplique no ritmo da sua familia, igreja ou escola biblica.</p></div></div><div class="testimonial"><div class="quote">Para pais que querem ensinar sobre Jesus, mas precisam de algo pronto, bonito e facil de encaixar na rotina.<strong>Escolha um pacote e comece pelo tema mais urgente.</strong></div><div class="quote">Para quem quer que a crianca aprenda valores cristaos fazendo algo que prende atencao: pintar, ler, responder e brincar.<strong>O material vira ponte entre fe e pratica.</strong></div></div><div class="offer"><div class="offer-main"><span class="eyebrow">Oferta direta</span><h2>Comece com o pacote que seu filho mais vai gostar de abrir.</h2><p>Se a crianca gosta de pintar, comece pelos de colorir. Se a rotina noturna e dificil, comece pelo Biblia para Dormir. Se o foco e comportamento, va nos valores cristaos.</p><a class="btn btn-primary" href="#pacotes">Escolher meu pacote</a></div><div class="offer-side"><strong>R$ 19,90</strong><span>Compra simples por pacote. Escolha o material, finalize no Pix e receba pelo atendimento.</span><a class="btn btn-gold" href="#pacotes">Ver pacotes</a></div></div></div></section>
-    <section id="pagamento"><div class="wrap"><div class="payment" id="paymentBox"><div class="payment-inner"><div><span class="eyebrow">Pagamento Pix</span><h2>Finalize com Pix</h2><p id="paymentText">Escolha um pacote acima para aparecer o nome do material aqui.</p><div class="payment-note"><span>Informe seus dados de entrega</span><span>R$ 19,90 sem taxa escondida</span><span>Envio manual pelo e-mail informado</span></div></div><div class="pix-box"><div class="pix-line"><span>Pacote</span><strong id="produtoEscolhido">Aguardando escolha</strong></div><div class="pix-line"><span>Valor</span><strong>R$ 19,90</strong></div><div class="pix-line"><span>Pagamento</span><strong>Pix</strong></div><div class="pix-key" id="pixKey">17992062959</div><button class="btn btn-primary" type="button" id="copyPix">Copiar chave Pix</button><p class="copy-status" id="copyStatus" aria-live="polite"></p><form class="delivery-form" id="deliveryForm"><label>Nome completo<input id="clienteNome" name="nome" type="text" autocomplete="name" placeholder="Digite seu nome" required></label><label>Telefone / WhatsApp<input id="clienteTelefone" name="telefone" type="tel" autocomplete="tel" placeholder="Digite seu numero" required></label><label>E-mail para receber o material<input id="clienteEmail" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required></label><button class="btn btn-gold" type="submit">Enviar meus dados</button><p class="form-status" id="formStatus" aria-live="polite"></p></form></div></div></div></div></section>
-    <section id="duvidas"><div class="wrap"><div class="section-head"><h2>Antes de comprar</h2><p>Respostas curtas para voce decidir com seguranca.</p></div><div class="faq"><div class="faq-item"><strong>Como recebo?</strong><p>Apos o Pix, preencha seu nome, telefone e e-mail. O material sera enviado manualmente para o e-mail informado.</p></div><div class="faq-item"><strong>Preciso imprimir?</strong><p>Nao necessariamente. Voce pode usar no celular, tablet ou imprimir as paginas que quiser.</p></div><div class="faq-item"><strong>Serve para qual idade?</strong><p>Foi pensado para criancas, com conversa adaptavel. Os pais ajustam a profundidade conforme a idade.</p></div><div class="faq-item"><strong>Posso comprar mais de um?</strong><p>Sim. Cada pacote custa R$ 19,90. Voce pode comecar com um tema e depois escolher outros.</p></div><div class="faq-item"><strong>E material cristao?</strong><p>Sim. A proposta e crista, familiar e educativa, com foco em fe, valores e formacao de carater.</p></div><div class="faq-item"><strong>E se eu tiver duvida?</strong><p>Voce pode informar seu telefone no pedido para facilitar o atendimento se for necessario.</p></div></div><div class="final-cta"><div><h2>Seu filho nao precisa de uma aula perfeita. Precisa de um pai presente.</h2><p>Escolha o primeiro pacote e comece com uma conversa simples, bonita e cheia de proposito.</p></div><a class="btn btn-primary" href="#pacotes">Escolher por R$ 19,90</a></div></div></section>
+    <section id="pacotes"><div class="wrap"><div class="section-head"><h2>Escolha pelo momento da sua familia</h2><p>Alguns pais querem uma rotina antes de dormir. Outros querem ensinar boas maneiras, oração, versículos ou histórias bíblicas. Comece pelo pacote que conversa com a necessidade de hoje.</p></div><div class="grid" id="listaPacotes"></div><div class="choice-guide"><div class="choice-card"><strong>Se a criança ama pintar</strong><p>Comece pelos pacotes de colorir. Eles chamam atenção rápido e abrem espaço para conversar sobre Jesus sem pressão.</p></div><div class="choice-card"><strong>Se você quer criar rotina</strong><p>Escolha Bíblia para Dormir, Devocional Infantil ou Caderno de Oração para transformar poucos minutos em hábito de fé.</p></div><div class="choice-card"><strong>Se o foco é comportamento</strong><p>Boas Maneiras, Frutos do Espírito e O que um Cristão Faria ajudam a falar de atitudes com leveza e clareza.</p></div></div><div class="conversion-strip"><div class="strip-item"><strong>Sem promessa exagerada</strong><span>É um material simples, bonito e útil para conduzir conversas cristãs.</span></div><div class="strip-item"><strong>Para a realidade do Brasil</strong><span>Serve para casa, igreja, culto infantil, célula ou escola bíblica.</span></div><div class="strip-item"><strong>Valor acessível</strong><span>Você começa por um pacote, sem assinatura e sem compra grande.</span></div><div class="strip-item"><strong>Atendimento humano</strong><span>Você confirma pelo WhatsApp antes de finalizar e recebe por e-mail.</span></div></div></div></section>
+    <section id="beneficios"><div class="wrap"><div class="audience"><div class="audience-card light"><span class="eyebrow">Para quem é</span><h2>Para mães, pais e responsáveis que querem educar com fé sem pesar o ambiente.</h2><p>O material ajuda quando você sente que precisa falar de Deus, obediência, gratidão ou bondade, mas não quer que a criança associe fé apenas a cobrança.</p><ul class="audience-list"><li>Quando falta ideia para conversar sobre a Bíblia.</li><li>Quando a criança aprende melhor vendo, pintando e participando.</li><li>Quando você quer tirar alguns minutos da tela e criar um momento com propósito.</li></ul></div><div class="audience-card deep"><span class="eyebrow">O que muda</span><h2>A fé deixa de ser só uma fala e vira uma experiência da casa.</h2><p>Não é sobre fazer uma aula perfeita. É sobre ter um ponto de partida bonito para sentar com a criança, abrir uma atividade e conversar com naturalidade.</p><ul class="audience-list"><li>Mais presença dos pais na formação espiritual.</li><li>Mais recursos para ensinar valores sem improviso.</li><li>Mais momentos simples que a criança consegue lembrar.</li></ul></div></div><div class="why"><div class="why-card"><span class="eyebrow">Por que funciona</span><h2>Criança aprende melhor quando participa.</h2><p>Em vez de apenas ouvir “precisa obedecer” ou “precisa orar”, ela pinta, lê, responde, memoriza, imagina e conversa. Isso cria abertura para ensinar com carinho.</p><ul class="why-list"><li>Capas e páginas com visual infantil que chamam atenção.</li><li>Temas bíblicos claros para pais ensinarem sem complicar.</li><li>Atividades que unem aprendizado, vínculo e espiritualidade.</li><li>Pagamento simples e envio manual para o e-mail informado.</li></ul><a class="btn btn-gold" href="#pacotes">Escolher meu pacote</a></div><div class="benefits"><div class="benefit"><strong>Para ensinar sem travar</strong><span>O tema já vem pronto. Você só escolhe, abre e conduz a criança.</span></div><div class="benefit"><strong>Para reduzir tela vazia</strong><span>Troque alguns minutos de distração por pintura, leitura e conversa com propósito.</span></div><div class="benefit"><strong>Para corrigir com leveza</strong><span>Valores como obediência, perdão e bondade entram por histórias e exemplos.</span></div><div class="benefit"><strong>Para criar rotina de fé</strong><span>Devocional, oração e Bíblia deixam de ser evento raro e viram prática simples.</span></div></div></div><div class="steps"><div class="step"><strong>1. Escolha o pacote</strong><p>Colorir, dormir, orar, memorizar, aprender valores ou estudar a Bíblia em casa.</p></div><div class="step"><strong>2. Confirme no WhatsApp</strong><p>Você envia seus dados em uma mensagem pronta e recebe a orientação para finalizar com segurança.</p></div><div class="step"><strong>3. Receba por e-mail</strong><p>Após a confirmação, eu envio manualmente o material para o e-mail informado.</p></div></div><div class="testimonial"><div class="quote">Para pais que querem ensinar sobre Jesus, mas precisam de algo pronto, bonito e fácil de encaixar na rotina.<strong>Escolha um pacote e comece pelo tema mais urgente.</strong></div><div class="quote">Para quem quer que a criança aprenda valores cristãos fazendo algo que prende atenção: pintar, ler, responder e brincar.<strong>O material vira ponte entre fé e prática.</strong></div></div><div class="offer"><div class="offer-main"><span class="eyebrow">Comece com calma</span><h2>Escolha o pacote que combina com a fase do seu filho.</h2><p>Se a criança gosta de pintar, comece pelos de colorir. Se a rotina noturna é difícil, comece pelo Bíblia para Dormir. Se o foco é comportamento, comece pelos valores cristãos.</p><a class="btn btn-primary" href="#pacotes">Escolher meu pacote</a></div><div class="offer-side"><strong>R$ 19,90</strong><span>Compra simples por pacote. Você escolhe, confirma pelo WhatsApp e recebe o material pelo e-mail informado.</span><a class="btn btn-gold" href="#pacotes">Ver pacotes</a></div></div></div></section>
+    <section id="pagamento"><div class="wrap"><div class="payment" id="paymentBox"><div class="payment-inner"><div><span class="eyebrow">Confirmação do pedido</span><h2>Para onde envio seu material?</h2><p id="paymentText">Escolha um pacote acima para aparecer o nome do material aqui.</p><div class="payment-note"><span>Dados usados só no pedido</span><span>Confirmação pelo WhatsApp</span><span>Envio manual pelo e-mail informado</span></div></div><div class="pix-box"><form class="delivery-form" id="deliveryForm"><label>Nome completo<input id="clienteNome" name="nome" type="text" autocomplete="name" placeholder="Digite seu nome" required></label><label>Telefone / WhatsApp<input id="clienteTelefone" name="telefone" type="tel" autocomplete="tel" placeholder="Digite seu numero" required></label><label>E-mail para receber o material<input id="clienteEmail" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required></label><p class="privacy-note">Seus dados serão usados apenas para confirmar o pedido e enviar o material no e-mail informado.</p><p class="form-helper">Depois de preencher, vamos abrir uma mensagem pronta no WhatsApp para confirmar seu pedido com atendimento humano.</p><button class="btn btn-gold confirm-order" type="submit">Confirmar pedido no WhatsApp</button><p class="form-status" id="formStatus" aria-live="polite"></p></form><div class="summary-box"><strong>Resumo do pedido</strong><span><b id="produtoEscolhido">Aguardando escolha</b><br>Valor: R$ 19,90<br>Pagamento orientado pelo WhatsApp.</span></div></div></div></div></div></section>
+    <section id="duvidas"><div class="wrap"><div class="section-head"><h2>Antes de comprar</h2><p>Respostas curtas para voce decidir com seguranca.</p></div><div class="faq"><div class="faq-item"><strong>Como recebo?</strong><p>Escolha o pacote, preencha seus dados e confirme pelo WhatsApp. Depois da confirmação, o material sera enviado manualmente para o e-mail informado.</p></div><div class="faq-item"><strong>Preciso imprimir?</strong><p>Nao necessariamente. Voce pode usar no celular, tablet ou imprimir as paginas que quiser.</p></div><div class="faq-item"><strong>Serve para qual idade?</strong><p>Foi pensado para criancas, com conversa adaptavel. Os pais ajustam a profundidade conforme a idade.</p></div><div class="faq-item"><strong>Posso comprar mais de um?</strong><p>Sim. Cada pacote custa R$ 19,90. Voce pode comecar com um tema e depois escolher outros.</p></div><div class="faq-item"><strong>E material cristao?</strong><p>Sim. A proposta e crista, familiar e educativa, com foco em fe, valores e formacao de carater.</p></div><div class="faq-item"><strong>E se eu tiver duvida?</strong><p>Voce pode informar seu telefone no pedido para facilitar o atendimento se for necessario.</p></div></div><div class="final-cta"><div><h2>Seu filho nao precisa de uma aula perfeita. Precisa de um pai presente.</h2><p>Escolha o primeiro pacote e comece com uma conversa simples, bonita e cheia de proposito.</p></div><a class="btn btn-primary" href="#pacotes">Escolher o primeiro material</a></div></div></section>
   </main>
   <footer><div class="wrap">Pequenos no Caminho - pacotes cristaos educativos - valor fixo R$ 19,90</div></footer>
   <script>
@@ -233,9 +278,9 @@
     function escolherPacote(nome) {
       pacoteSelecionado = nome;
       produtoEscolhido.textContent = nome;
-      paymentText.textContent = `Voce escolheu: ${nome}. O valor e ${preco}. Copie a chave Pix, faca o pagamento e preencha nome, telefone e e-mail para receber o material.`;
+      paymentText.textContent = `Voce escolheu: ${nome}. Preencha seus dados para confirmar o pedido pelo WhatsApp e receber a orientacao de pagamento com seguranca.`;
       paymentBox.classList.add('is-visible');
-      copyStatus.textContent = '';
+      if (copyStatus) copyStatus.textContent = '';
       formStatus.textContent = '';
       document.getElementById('pagamento').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -250,10 +295,12 @@
       card.querySelector('button').addEventListener('click', () => escolherPacote(nome));
       lista.appendChild(card);
     });
-    copyPix.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(pix); copyStatus.textContent = 'Chave Pix copiada.'; }
-      catch (error) { copyStatus.textContent = `Chave Pix: ${pix}`; }
-    });
+    if (copyPix) {
+      copyPix.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(pix); copyStatus.textContent = 'Chave Pix copiada.'; }
+        catch (error) { copyStatus.textContent = `Chave Pix: ${pix}`; }
+      });
+    }
     deliveryForm.addEventListener('submit', (event) => {
       event.preventDefault();
       if (!pacoteSelecionado) {
@@ -267,10 +314,11 @@
         formStatus.textContent = 'Preencha nome, telefone e e-mail para receber o material.';
         return;
       }
-      const msg = `Ola, fiz o Pix de ${preco} referente ao pacote cristao educativo: ${pacoteSelecionado}.\n\nNome: ${nome}\nTelefone: ${telefone}\nE-mail para envio: ${email}\n\nPor favor, envie o material neste e-mail.`;
+      const msg = `Ola! Quero confirmar meu pedido do pacote cristao educativo: ${pacoteSelecionado}.\n\nDados para envio manual:\nNome: ${nome}\nTelefone: ${telefone}\nE-mail para receber o material: ${email}\n\nPode me orientar para finalizar o pagamento e receber o material por e-mail?`;
       window.open(`https://api.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
-      formStatus.textContent = 'Dados prontos. Envie a mensagem no WhatsApp para confirmar o pedido.';
+      formStatus.textContent = 'Pedido preparado. Confira a mensagem no WhatsApp e envie para confirmar com o atendimento.';
     });
   </script>
 </body>
 </html>
+
